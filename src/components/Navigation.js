@@ -5,7 +5,9 @@ export default class Navigation extends Component {
   render() {
     return (
       <nav>
-        <NavLink to='/'>Plutonium</NavLink>
+        <NavLink to='/fuels'>Fuels</NavLink>
+        <NavLink to='/parts'>Parts</NavLink>
+        <NavLink to='/cleanup'>Cleanup</NavLink>
       </nav>
     );
   }

@@ -6,7 +6,7 @@ export default class Header extends Component {
     return (
       <header>
         <div>
-          <h1>Reactor Depot</h1>
+          <NavLink to='/'><h1>Reactor Depot</h1></NavLink>
           <h4>For all your nuclear needs</h4>
         </div>
         <nav>

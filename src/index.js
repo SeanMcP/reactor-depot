@@ -6,6 +6,7 @@ import App from './components/App';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
+import Fuel from './components/Fuel';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route exact path='/' component={Home}/>
         <Route path='/contact' component={Contact}/>
         <Route path='/about' component={About}/>
+        <Route path='/fuel' component={Fuel}/>
       </Switch>
     </App>
   </BrowserRouter>

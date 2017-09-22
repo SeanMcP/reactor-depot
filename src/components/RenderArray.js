@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import data from '../data/data'
 import { Link } from 'react-router-dom'
 
 export default class Fuel extends Component {
@@ -11,7 +10,7 @@ export default class Fuel extends Component {
             <h4 className='card-title'>{item.name}</h4>
             <h5 className='card-title'>{item.price}</h5>
             <p className='card-text'>{item.desc}</p>
-            <Link to={`${this.props.match.url}/${item.id}`}>More info</Link>
+            <Link to={`${this.props.data.url}/${item.id}`}>More info</Link>
           </div>
         </div>
       )

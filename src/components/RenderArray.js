@@ -17,12 +17,15 @@ export default class Fuel extends Component {
   render() {
     let renderedArray = this.props.array.map(item => {
       return (
-        <div key={item.id} className='card p-3 m-3'>
-          <div className='card-'>
+        <div key={item.id} className='card m-3'>
+          <Link to={`${this.props.data.url}/${item.id}`}>
+            <div className='card-img-top' style={{backgroundImage: `url(${item.imageurl})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 200}}></div>
+          </Link>
+          <div className='card-block p-3'>
             <h4 className='card-title'>{item.name}</h4>
             <h5 className='card-title'>${item.price}</h5>
             <p className='card-text'>{item.desc}</p>
-            <Link to={`${this.props.data.url}/${item.id}`}>More info</Link>
+            <Link to={`${this.props.data.url}/${item.id}`} className='card-link'>More info</Link>
           </div>
         </div>
       )

@@ -20,13 +20,9 @@ export default class Fuel extends Component {
         <div key={item.id} className='card p-3 m-3'>
           <div className='card-'>
             <h4 className='card-title'>{item.name}</h4>
-            <h5 className='card-title'>{item.price}</h5>
+            <h5 className='card-title'>${item.price}</h5>
             <p className='card-text'>{item.desc}</p>
-            <ul>
-              <li><Link to={`${this.props.data.url}/${item.id}`}>More info</Link></li>
-              <li><span onClick={this.handlePurchase} data-productid={item.id}>Add to state</span></li>
-              <li><Link to={`${this.props.data.url}/${item.id}/add`}>Dynamic route</Link></li>
-            </ul>
+            <Link to={`${this.props.data.url}/${item.id}`}>More info</Link>
           </div>
         </div>
       )

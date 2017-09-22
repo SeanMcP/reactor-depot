@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import data from '../data/data';
+// import data from '../data/data';
 
 export default class Cart extends Component {
   constructor(props) {

@@ -7,12 +7,10 @@ export default class Item extends Component {
     let params = this.props.match.params
     let cat = params.cat
     let id = params.id;
-    // console.log('data[cat]', data[cat]);
     let sortedArray = data[cat].filter(function (element) {
         return element.id === id;
     });
     let item = sortedArray[0];
-    // console.log('item', item);
     return (
       <main className='p-3'>
         <div className='row'>

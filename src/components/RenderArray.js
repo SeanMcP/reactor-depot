@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import data from '../data/data'
 import { Link } from 'react-router-dom'
-// import RenderArray from './RenderArray'
 
 export default class Fuel extends Component {
   render() {
-    // console.log('this.props.match: ', this.props.match)
-    let fuelRender = data.fuel.map(item => {
+    let renderedArray = this.props.array.map(item => {
       return (
         <div key={item.id} className='card p-3 m-3'>
           <div className='card-'>
@@ -19,17 +17,9 @@ export default class Fuel extends Component {
       )
     })
     return (
-      <main className='p-3'>
-        <h4 className='display-4'>Fuel</h4>
-        <p>Reactor Depot provides a wide range of fuels for your nuclear needs. Please choose from the following:</p>
         <div className='card-deck'>
-          {fuelRender}
+          {renderedArray}
         </div>
-      </main>
     );
   }
 }
-
-// {this.props.func('fuel', data.fuel)}
-// {[].sayHello('Sean')}
-// {[].renderArrayMap(data.fuel)}

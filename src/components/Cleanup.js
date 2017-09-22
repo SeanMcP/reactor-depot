@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import data from '../data/data'
 import { Link } from 'react-router-dom'
 
-export default class Fuel extends Component {
+export default class Cleanup extends Component {
   render() {
-    // console.log('this.props.match: ', this.props.match)
-    let fuelRender = data.fuel.map(item => {
+    let cleanupRender = data.cleanup.map(item => {
       return (
         <div key={item.id} className='card p-3 m-3'>
           <div className='card-'>
@@ -19,10 +18,10 @@ export default class Fuel extends Component {
     })
     return (
       <main className='p-3'>
-        <h4 className='display-4'>Fuel</h4>
-        <p>Reactor Depot provides a wide range of fuels for your nuclear needs. Please choose from the following:</p>
+        <h4 className='display-4'>Cleanup</h4>
+        <p>Reactor Depot provides a wide range of cleanup materials for your nuclear needs. Please choose from the following:</p>
         <div className='card-deck'>
-          {fuelRender}
+          {cleanupRender}
         </div>
       </main>
     );

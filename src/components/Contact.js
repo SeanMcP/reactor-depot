@@ -1,6 +1,41 @@
 import React, { Component } from 'react';
 
 export default class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      tel: '',
+      message: ''
+    }
+    this.handleName = this.handleName.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handleTel = this.handleTel.bind(this);
+    this.handleMessage = this.handleMessage.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleName(e) {
+    this.setState({name: e.target.value});
+  }
+  handleEmail(e) {
+    this.setState({email: e.target.value});
+  }
+  handleTel(e) {
+    this.setState({tel: e.target.value});
+  }
+  handleMessage(e) {
+    this.setState({message: e.target.value});
+  }
+  handleSubmit(e) {
+    console.log(`Thank you, ${this.state.name}! We'll get back to you in 3-5 business weeks.`)
+    this.setState({
+      name: '',
+      email: '',
+      tel: '',
+      message: ''
+    });
+  }
   render() {
     return (
       <main className='p-3'>
@@ -13,27 +48,27 @@ export default class Contact extends Component {
             <div className="form-group row">
               <label htmlFor="name-input" className="col-2 col-form-label">Name</label>
               <div className="col-10">
-                <input placeholder="First and lastname" className="form-control" type="text" value="" id="name-input"/>
+                <input onChange={this.handleName} placeholder="Full name" className="form-control" type="text" value={this.state.name} id="name-input"/>
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="email-input" className="col-2 col-form-label">Email</label>
               <div className="col-10">
-                <input placeholder="address@example.com" className="form-control" type="email" value="" id="email-input"/>
+                <input onChange={this.handleEmail} placeholder="address@example.com" className="form-control" type="email" value={this.state.email} id="email-input"/>
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="tel-input" className="col-2 col-form-label">Telephone</label>
               <div className="col-10">
-                <input placeholder="X-(XXX) XXX-XXXX" className="form-control" type="tel" value="" id="tel-input"/>
+                <input onChange={this.handleTel} placeholder="X-(XXX) XXX-XXXX" className="form-control" type="tel" value={this.state.tel} id="tel-input"/>
               </div>
             </div>
             <div className="form-group">
               <label htmlFor="text-textarea">Example textarea</label>
-              <textarea className="form-control" id="text-textarea" rows="3"></textarea>
+              <textarea onChange={this.handleMessage} className="form-control" id="text-textarea" rows="3" value={this.state.message}></textarea>
             </div>
             <p className='text-right mb-0'>
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button onSubmit={this.handleSubmit} type="submit" className="btn btn-primary">Submit</button>
             </p>
           </div>
         </form>
